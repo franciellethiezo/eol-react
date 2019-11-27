@@ -9,21 +9,21 @@ import Logo from '../assets/img/Logo Oficial.png';
 
 function Cabecalho() {
     return (
-        <header className="flex-between home-header">
-            <div className="logo flex-center">
-                <img src={Logo} alt="logo" />
+        <header className="header-home flex-between">
+            <div className="tw-logo flex-center">
+                <img className="img-logo" src={Logo} alt="logo" />
             </div>
-            <nav className="flex-center">
-                <a href="#">
+            <nav className="nav-header flex-center">
+                <a className="nav-header-a" href="#">
                     <button className="btn">Sobre nós</button>
                 </a>
-                <a href="#">
+                <a className="nav-header-a" href="#">
                     <button className="btn">Como funciona?</button>
                 </a>
-                <a href="duvidas.html">
+                <a className="nav-header-a" href="#">
                     <button className="btn">Dúvidas</button>
                 </a>
-                <a href="./cadastro-caixa.html">
+                <a className="nav-header-a" href="#">
                     <button className="btn" id="btn-cadastro">Cadastro</button>
                 </a>
             </nav>

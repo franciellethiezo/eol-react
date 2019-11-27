@@ -1,23 +1,20 @@
 /* #region - cabecalho.css */
 
-header {
-    height: 72px;
+.header-home {
+    height: 10vh;
+    padding: 0 3.75em;
 }
 
-header .logo {
+.header-home .tw-logo {
     height: 100%;
-    margin-left: 10px;
+    margin-left: 0.625em;
 }
 
-header .logo img {
+.header-home .tw-logo .img-logo {
     width: 13.5em;
 }
 
-header {
-    padding: 0 60px;
-}
-
-nav a {
+.nav-header .nav-header-a {
     margin: 0 1em;
 }
 
@@ -25,12 +22,13 @@ nav a {
     background: none;
     border: none;
     font-weight: bold;
+    font-size: 1.1em;
 }
 
-nav #btn-cadastro {
+#btn-cadastro {
     background-color: var(--green);
-    padding: 8px 25px;
-    border-radius: 20px;
+    padding: 0.5em 1.57em;
+    border-radius: 1.25em;
 }
 
 /* #endregion - cabecalho.css */
