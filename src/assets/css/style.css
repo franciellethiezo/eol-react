@@ -1,0 +1,40 @@
+:root {
+    --yellow: #FFD34D;
+    --green: #94EADB;
+    --roxo: #D76AD9;
+    --grey: #A3A0A0;
+    --pink: #D76AD9;
+    --red: #FF7289;
+    --purple: #805cff;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}

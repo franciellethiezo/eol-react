@@ -1,10 +1,11 @@
 import React from 'react';
 
 // Css (assets/css)
-import '../assets/css/login.css';
+import '../assets/css/cabecalho.css';
+import '../assets/css/style.css';
 
 // Imagens (assets/images)
-import Logo from '../assets/images/Logo Oficial.png';
+import Logo from '../assets/img/Logo Oficial.png';
 
 function Cabecalho() {
     return (
