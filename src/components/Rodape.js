@@ -9,11 +9,11 @@ import '../assets/css/style.css';
 import LogoThoughtWorks from '../assets/img/logo-thoughtworks.png';
 
 // Scalable Vector Graphics - .SVG (assets/svg)
-import LogoFacebook from '../assets/svg/facebook-logo.svg';
-import LogoInstagram from '../assets/svg/instagram-logo.svg';
-import LogoTwitter from '../assets/svg/twitter-logo.svg';
-import LogoLinkedIn from '../assets/svg/linkedin-logo.svg';
-import LogoGitHub from '../assets/svg/github-logo.svg';
+import LogoFacebook from '../assets/svg/Footer/facebook-logo.svg';
+import LogoInstagram from '../assets/svg/Footer/instagram-logo.svg';
+import LogoTwitter from '../assets/svg/Footer/twitter-logo.svg';
+import LogoLinkedIn from '../assets/svg/Footer/linkedin-logo.svg';
+import LogoGitHub from '../assets/svg/Footer/github-logo.svg';
 
 function Rodape() {
     return (
