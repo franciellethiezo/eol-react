@@ -1,0 +1,45 @@
+.box-cad {
+    width: 50%;
+    height: 67vh;
+    background: #fff;
+    box-shadow: 0em 0em 1.5em rgb(119, 118, 118);
+    width: 30vw;
+    border-radius: 15px;
+}
+
+.d-box {
+    height: 63vh;
+}
+
+.d-box h2 {
+    font-size: 3.5em;
+}
+
+.box-cad .img-logo-cad {
+    width: 3.5em;
+}
+
+.form-box input {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.336);
+    padding: 5px 5px;
+    margin-top: 5px;
+}
+
+.roxo {
+    background-color: var(--roxo);
+}
+
+.d-box .a-cad {
+    text-decoration: none;
+    font-weight: bold;
+    color: #666;
+    font-size: 0.7em;
+}
+
+.lnk-entrar {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: #A3A0A0;
+}
