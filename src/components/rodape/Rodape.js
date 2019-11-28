@@ -15,3 +15,4 @@ function Rodape() {
         </footer>
     );
 }
+export default Rodape;
