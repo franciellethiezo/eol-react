@@ -29,3 +29,4 @@ function NavbarUser() {
         </aside>
     );
 }
+export default NavbarUser;

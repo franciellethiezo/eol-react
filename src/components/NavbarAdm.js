@@ -35,3 +35,4 @@ function NavbarAdm() {
         </aside>
     );
 }
+export default NavbarAdm;
