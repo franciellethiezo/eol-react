@@ -1,17 +1,35 @@
 import React from 'react';
+// import { animate } from "../assets/js/script";
+
+// Css (assets/css)
+import '../assets/css/rodape.css';
+import '../assets/css/style.css';
+
+// Imagens (assets/img)
+import LogoThoughtWorks from '../assets/img/logo-thoughtworks.png';
+
+// Scalable Vector Graphics - .SVG (assets/svg)
+import LogoFacebook from '../assets/svg/Footer/facebook-logo.svg';
+import LogoInstagram from '../assets/svg/Footer/instagram-logo.svg';
+import LogoTwitter from '../assets/svg/Footer/twitter-logo.svg';
+import LogoLinkedIn from '../assets/svg/Footer/linkedin-logo.svg';
+import LogoGitHub from '../assets/svg/Footer/github-logo.svg';
+
 function Rodape() {
     return (
-        <footer class="footer-home flex-between">
-            <img class="flex-between" src="./imgs/logo-thoughtworks.png" alt="" />
-            <div class="footer-links flex-center">
-                <div class="footer-icons">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-twitter-square"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-github-square"></i>
+        <footer className="footer-home flex-between">
+            <img className="logo-tw flex-between" src={LogoThoughtWorks} alt="" />
+            <div className="footer-links flex-center">
+                <div className="footer-icons flex-around">
+                    <img className="logo-rede-sociais" src={LogoFacebook} />
+                    <img className="logo-rede-sociais" src={LogoInstagram} />
+                    <img className="logo-rede-sociais" src={LogoTwitter} />
+                    <img className="logo-rede-sociais" src={LogoLinkedIn} />
+                    <img className="logo-rede-sociais" src={LogoGitHub} />
                 </div>
             </div>
         </footer>
     );
 }
+
+export default Rodape;
