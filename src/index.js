@@ -12,6 +12,7 @@ import { usuarioAutenticado, parseJwt } from './services/Auth';
 import App from './App';
 import Login from './pages/Login';
 import CadastroUsuario from './pages/CadastroUsuario';
+import Perfil from './pages/Perfil';
 import NotFound from './pages/NotFound';
 
 // Rotas para páginas
@@ -22,6 +23,7 @@ const Rotas = (
                 <Route exact path="/" component={App} />
                 <Route path="/login" component={Login} />
                 <Route path="/cadastro-usuario" component={CadastroUsuario} />
+                <Route path="/perfil" component={Perfil} />
                 <Route component={NotFound} />
             </Switch>
         </div>
