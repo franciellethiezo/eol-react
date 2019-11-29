@@ -1,40 +1,61 @@
 .box-cad {
     width: 50%;
-    height: 67vh;
+    height: 60vh;
     background: #fff;
     box-shadow: 0em 0em 1.5em rgb(119, 118, 118);
     width: 30vw;
     border-radius: 15px;
 }
 
-.d-box {
-    height: 63vh;
+.d-box-cad {
+    height: 60vh;
 }
 
-.d-box h2 {
-    font-size: 3.5em;
+.d-box-cad .h2-cad {
+    font-size: 3.6em;
+}
+
+.d-box-cad .p-cad {
+    font-size: 1.3em;
+    margin-bottom: 0.7em;
 }
 
 .box-cad .img-logo-cad {
     width: 3.5em;
 }
 
-.form-box input {
+.form-box-cad .input-cad {
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.336);
     padding: 5px 5px;
-    margin-top: 5px;
+    margin-top: 7px;
+    width: 15vw;
 }
 
 .roxo {
     background-color: var(--roxo);
 }
 
-.d-box .a-cad {
+.btn-cad {
+    font-size: 1em;
+    border-radius: 1em;
+    color: white;
+    margin-top: 2em;
+    padding: 0.5em 4.5em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.d-box-cad .p-cad-footer {
+    font-size: 1.1em;
+}
+
+.d-box-cad .a-cad {
     text-decoration: none;
     font-weight: bold;
     color: #666;
-    font-size: 0.7em;
+    font-size: 0.9em;
 }
 
 .lnk-entrar {
