@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Componentes (components)
-import Cabecalho from '../components/Cabecalho';
+import Cabecalho from '../components/Header';
 import Rodape from '../components/Footer';
 
 // Css (assets/css)
