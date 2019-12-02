@@ -2,7 +2,7 @@ import React from 'react';
 // import { animate } from "../assets/js/script";
 
 // Css (assets/css)
-import '../assets/css/rodape.css';
+import '../assets/css/footer.css';
 import '../assets/css/style.css';
 
 // Imagens (assets/img)
@@ -15,7 +15,7 @@ import LogoTwitter from '../assets/svg/Footer/twitter-logo.svg';
 import LogoLinkedIn from '../assets/svg/Footer/linkedin-logo.svg';
 import LogoGitHub from '../assets/svg/Footer/github-logo.svg';
 
-function Rodape() {
+function Footer() {
     return (
         <footer className="footer-home flex-between">
             <img className="logo-tw flex-between" src={LogoThoughtWorks} alt="" />
@@ -32,4 +32,4 @@ function Rodape() {
     );
 }
 
-export default Rodape;
+export default Footer;

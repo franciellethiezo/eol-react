@@ -1,13 +1,13 @@
 import React from 'react';
 
 // Css (assets/css)
-import '../assets/css/cabecalho.css';
+import '../assets/css/header.css';
 import '../assets/css/style.css';
 
 // Imagens (assets/images)
 import Logo from '../assets/img/Logo Oficial.png';
 
-function Cabecalho() {
+function Header() {
     return (
         <header className="header-home flex-between">
             <div className="tw-logo flex-center">
@@ -31,4 +31,4 @@ function Cabecalho() {
     );
 }
 
-export default Cabecalho;
+export default Header;

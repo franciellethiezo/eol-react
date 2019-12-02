@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Componentes (components)
-import NavBarUser from '../components/NavBarUser';
+import NavBarUser from '../components/NavbarUser';
 
 // Css (assets/css)
 import '../assets/css/perfil.css';
@@ -22,7 +22,7 @@ class Perfil extends Component {
         return (
             <section className="web-app">
                 <NavBarUser />
-
+                
                 {/* <section className="app-page" id="app-page-produto">
                     <nav class="mobile-nav flex-center">
                         <div class="wrap container flex-between">
