@@ -46,3 +46,9 @@ button {
     align-items: center;
     flex-direction: column;
 }
+
+.flex-justify {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}

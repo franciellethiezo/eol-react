@@ -16,7 +16,7 @@ import HandShake from '../assets/svg/NavBarUser/handshake-icon.svg';
 import LogOut from '../assets/svg/NavBarUser/logout-icon.svg';
 
 //Script JS
-import '../assets/js/navbar';
+import { myFunction, myFunction2 } from '../assets/js/navbar';
 
 function NavBarUser() {
     return (
@@ -28,30 +28,30 @@ function NavBarUser() {
                         <img className="aside-img-logo" src={Logo} alt="" />
                         {/* <i class="fas fa-times" onclick="toggleAside()"></i> */}
                     </div>
-                    <div className="aside-icons flex-column">
-                        <div className="flex-center" onclick="toggleAside()">
-                            <a href="#">
-                                {/* <i className="fas fa-bullhorn" id="megaphone"></i> */}
-                                <img id="" className="aside-icon-box aside-icon-megaphone" src={Megaphone} alt="Aba de Anúncios" />
+                    <div className="aside-icons">
+                        <div className="aside-sup-navigation flex-center" onclick="toggleAside()">
+                            <a className="aside-a-icons megaphone-a flex-center" href="#">
+                                <img id="megaphone" className="aside-icons-box megaphone" src={Megaphone} alt="Aba de Anúncios" />
+                                <div className="aside-text-icons aside-box-icons megaphone-text">Anúncios</div>
                             </a>
                         </div>
-                        <div className="flex-center" >
-                            <a href="#">
-                                {/* <i className="fas fa-heart flex-center"></i> */}
-                                <img className="aside-icon-box" src={Heart} alt="Aba de Seus Interesses" />
+                        <div className="aside-sup-navigation flex-center">
+                            <a className="aside-a-icons heart-a flex-center" href="#">
+                                <img className="aside-icons-box" src={Heart} alt="Aba de Seus Interesses" />
+                                <div className="aside-text-icons aside-box-icons heart-text">Lista de Interesses</div>
                             </a>
                         </div>
-                        <div className="flex-center">
-                            <a href="#">
-                                {/* <i className="far fa-handshake"></i> */}
-                                <img className="aside-icon-box" src={HandShake} alt="Aba de Compras realizadas" />
+                        <div className="aside-sup-navigation flex-center">
+                            <a className="aside-a-icons hand-shake-a flex-center" href="#">
+                                <img className="aside-icons-box" src={HandShake} alt="Aba de Compras realizadas" />
+                                <div className="aside-text-icons aside-box-icons hand-shake-text">Compras Efetuadas</div>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div className="aside-under">
-                    <div className="aside-logout aside-navigation flex-center">
-                        <a className="aside-a-btn" href="#">
+                    <div className="aside-logout aside-bottom-navigation flex-center">
+                        <a className="aside-a-btn flex-center" href="#">
                             <img className="aside-img-logout" src={LogOut} alt="" />
                             <div className="aside-text-logout aside-box-logout">Logout</div>
                         </a>
