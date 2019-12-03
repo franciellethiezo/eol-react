@@ -1,0 +1,22 @@
+.lista-usuario-aprovado {
+    width: 100%;
+}
+.header-controle-usuario{
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    list-style: none;
+    background-color: #a3a0a0;
+    height: 60px;
+    padding: 20px 0;
+}
+.header-controle-usuario a{
+    color: #000;
+}
+.info-controle-usuario{
+    display: flex;
+    justify-content: space-around;
+}
+.controle-usuario-aguardando{
+    display: none;
+}

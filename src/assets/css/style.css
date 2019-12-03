@@ -1,53 +1,11 @@
-/* :root {
-    --yellow: #FFD34D;
-    --green: #94EADB;
-    --roxo: #D76AD9;
-    --grey: #A3A0A0;
-    --pink: #D76AD9;
-    --red: #FF7289;
-    --purple: #805cff;
-}
-
-* {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    outline: none;
-}
-
-.flex-between {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-button {
-    border: none;
-    cursor: pointer;
-} */
-
-
 :root {
-    --yellow: #FFD34D;
-    --green: #94EADB;
-    --roxo: #D76AD9;
-    --grey: #A3A0A0;
-    --pink: #D76AD9;
-    --red: #FF7289;
-    --purple: #805cff;
+    --amarelo: #FFD34D;
+    --verde: #94EADB;
+    --roxo2: #D76AD9;
+    --cinza: #A3A0A0;
+    --rosa: #D76AD9;
+    --vermelho: #FF7289;
+    --roxo: #805cff;
 }
 
 * {
@@ -529,7 +487,7 @@ aside .thought-logo {
     background-color: var(--purple);
 }
 
-.flex-center {
+.flex-center-main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -645,18 +603,22 @@ nav a {
     margin: 0 1em;
 }
 
-nav #btn-cadastro {
-    background-color: var(--green);
+nav #btn-cadastro-cabecalho {
+    background-color: var(--verde);
     padding: 8px 25px;
     border-radius: 20px;
 }
 
-.btn-entrar {
+.btn-entrar-eol {
     margin-top: 1.50em;
     padding: 0.25em 3em;
     font-size: 2em;
     border-radius: 200px;
     color: white;
+    border: none;
+    cursor: pointer;
+    background-color: var(--roxo);
+    height: 64px;
 }
 
 .btn-log, .btn-cad {
@@ -701,18 +663,28 @@ nav #btn-cadastro {
     flex-direction: column;
 }
 
-.home img {
+.home-eol img {
     width: 26em;
 }
 
-.home .entrar {
+.home-eol .entrar {
     width: 32vw;
     text-align: left;
     line-height: 150%;
 }
 
-.home .entrar h1 {
+.home-eol .entrar h1 {
     line-height: 170%;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.h1-menu-eol{
+    line-height: 170%;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.p-menu-eol{
+    margin-bottom: 0;
 }
 
 footer {
@@ -1337,13 +1309,13 @@ footer {
     .home img {
         width: 18em;
     }
-    .text {
+    .text-home-eol {
         width: 16em;
     }
-    .text h1 {
+    .text-home-eol h1 {
         font-size: 1.3em;
     }
-    .text p {
+    .text-home-eol p {
         font-size: 0.9em;
     }
     .btn-entrar {
@@ -1447,7 +1419,7 @@ footer {
 /* Inicio do código para mobile */
 
 @media (max-width: 376px) {
-    .main-home {
+    .main-home-eol {
         height: 89vh;
     }
     .home img {
@@ -1608,7 +1580,7 @@ footer {
     header nav a {
         margin: 0 5px;
     }
-    header nav #btn-cadastro {
+    header nav #btn-cadastro-cabecalho {
         padding: 8px 15px;
     }
     .side-left {

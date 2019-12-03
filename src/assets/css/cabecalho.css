@@ -18,14 +18,14 @@
     margin: 0 1em;
 }
 
-.btn {
+.btn-home-cabecalho {
     background: none;
     border: none;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 1.1em;
 }
 
-#btn-cadastro {
+#btn-cadastro-cabecalho {
     background-color: var(--green);
     padding: 0.5em 1.57em;
     border-radius: 1.25em;
