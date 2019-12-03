@@ -53,7 +53,7 @@ class NavBarUser extends Component {
                         <div className="aside-icons">
                             <div className="aside-sup-navigation flex-center">
                                 <a className="aside-a-icons megaphone-a flex-center" href="#">
-                                    <img id="megaphone" className={this.state.megaphone} src={Megaphone} alt="Aba de Anúncios" onClick={this.toggleMegaphone.bind(this)} />
+                                    <img id="megaphone" className={this.state.megaphone} src={Megaphone} alt="Aba de Anúncios" />
                                     <div className="aside-text-icons aside-box-icons megaphone-text">Anúncios</div>
                                 </a>
                             </div>
