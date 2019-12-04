@@ -16,29 +16,18 @@ import HandShake from '../assets/svg/NavBarUser/handshake-icon.svg';
 import LogOut from '../assets/svg/NavBarUser/logout-icon.svg';
 
 //Script JS
-// import { toggleMegaphone } from '../assets/js/navbar';
+import {
+    toggleMegaphone
+} from '../assets/js/script';
 
 class NavBarUser extends Component {
-    constructor() {
-        super();
-        this.state = {
-            megaphone: "aside-icons-box"
-        }
+    constructor(props) {
+        super(props);
+        this.state = {}
     }
 
     toggleMegaphone() {
-        const element = document.querySelector('#megaphone');
-
-        if (element) {
-            this.setState({ megaphone: "aside-icons-box active" });
-        }
-        // else{
-        //     this.setState({ megaphone: "aside-icons-box" });
-        // }
-    }
-
-    componentDidMount(){
-        
+        return toggleMegaphone();
     }
 
     render() {
@@ -53,7 +42,7 @@ class NavBarUser extends Component {
                         <div className="aside-icons">
                             <div className="aside-sup-navigation flex-center">
                                 <a className="aside-a-icons megaphone-a flex-center" href="#">
-                                    <img id="megaphone" className={this.state.megaphone} src={Megaphone} alt="Aba de Anúncios" />
+                                    <img id="megaphone" className="aside-icons-box" src={Megaphone} alt="Aba de Anúncios" onClick={this.toggleMegaphone.bind(this)} />
                                     <div className="aside-text-icons aside-box-icons megaphone-text">Anúncios</div>
                                 </a>
                             </div>
