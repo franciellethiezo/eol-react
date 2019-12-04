@@ -34,10 +34,14 @@ class NavBarUser extends Component {
         return (
             <div>
                 {/* <div className="dark-modal flex-center" id="dark-modal"></div> */}
-                <aside className="aside-main flex-column-between" id="aside-mobile">
+                <aside id="aside-desktop" className="aside-main flex-column-between">
                     <div className="aside-from-above">
                         <div className="aside-logo flex-center">
-                            <img className="aside-img-logo" src={Logo} alt="" />
+                            <img className="aside-img-logo" src={Logo} alt="Logo EOL4US(End of Life for Us)" />
+                            <div className="">
+                                <div className=""></div>
+                                <div className=""></div>
+                            </div>
                         </div>
                         <div className="aside-icons">
                             <div className="aside-sup-navigation flex-center">
@@ -63,7 +67,7 @@ class NavBarUser extends Component {
                     <div className="aside-under">
                         <div className="aside-logout aside-bottom-navigation flex-center">
                             <a className="aside-a-btn logout-link flex-center" href="#">
-                                <img className="aside-img-logout" src={LogOut} alt="Finalizar " />
+                                <img className="aside-img-logout" src={LogOut} alt="Efetuar o logout da conta" />
                                 <div className="aside-text-logout logout-text aside-box-logout">Logout</div>
                             </a>
                         </div>
@@ -75,6 +79,27 @@ class NavBarUser extends Component {
                         </div>
                     </div>
                 </aside>
+                <nav id="nav-mobile" className="nav-mobile flex-center">
+                    <div className="nav-wrap nav-container flex-between">
+                        <div id="nav-hamburguer" className="nav-hamburger-menu">
+                            <div className="nav-line nav-line-0"></div>
+                            <div className="nav-line nav-line-1"></div>
+                            <div className="nav-line nav-line-2"></div>
+                        </div>
+
+                        {/* https://codepen.io/designcouch/pen/Atyop */}
+                        
+                        {/* <div id="nav-hamburguer" onClick={toggle}>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div> */}
+
+                        <img className="nav-logo" src={Logo} alt="" />
+                        <img className="nav-profile" src={CSharp} alt="" />
+                    </div>
+                </nav>
             </div>
         );
     }
