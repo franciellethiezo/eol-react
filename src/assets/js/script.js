@@ -8,12 +8,9 @@ export const toggleMegaphone = () => {
     megaphone.classList.toggle('active');
 }
 
-// export const toggle = () => {
-//     document.onload.apply(function(){
-//         document.getElementById('nav-hamburguer').click(function(){
-//             document.getElementById('nav-hamburguer').classList.toggle('open');
-//         });
-//     });
-// }
+export const toggleHamburguer = () => {
+    const hamb = document.getElementById('nav-hamburguer');
+    hamb.classList.toggle('open');
+}
 
 // #endregion

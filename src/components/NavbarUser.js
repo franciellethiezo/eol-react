@@ -17,17 +17,26 @@ import LogOut from '../assets/svg/NavBarUser/logout-icon.svg';
 
 //Script JS
 import {
-    toggleMegaphone
+    toggleMegaphone,
+    toggleHamburguer
 } from '../assets/js/script';
 
-class NavBarUser extends Component {
+export default class NavBarUser extends Component {
     constructor(props) {
         super(props);
         this.state = {}
     }
 
-    toggleMegaphone() {
+    componentDidMount() { 
+
+    }
+
+    Megaphone = () => {
         return toggleMegaphone();
+    }
+
+    Hamburguer = () => { 
+        return toggleHamburguer();
     }
 
     render() {
@@ -46,7 +55,7 @@ class NavBarUser extends Component {
                         <div className="aside-icons">
                             <div className="aside-sup-navigation flex-center">
                                 <a className="aside-a-icons megaphone-a flex-center" href="#">
-                                    <img id="megaphone" className="aside-icons-box" src={Megaphone} alt="Aba de Anúncios" onClick={this.toggleMegaphone.bind(this)} />
+                                    <img id="megaphone" className="aside-icons-box" src={Megaphone} alt="Aba de Anúncios" onClick={this.Megaphone.bind(this)} />
                                     <div className="aside-text-icons aside-box-icons megaphone-text">Anúncios</div>
                                 </a>
                             </div>
@@ -81,20 +90,13 @@ class NavBarUser extends Component {
                 </aside>
                 <nav id="nav-mobile" className="nav-mobile flex-center">
                     <div className="nav-wrap nav-container flex-between">
-                        <div id="nav-hamburguer" className="nav-hamburger-menu">
+                        <div id="nav-hamburguer" className="nav-hamburger-menu" onClick={this.Hamburguer.bind(this)}>
                             <div className="nav-line nav-line-0"></div>
                             <div className="nav-line nav-line-1"></div>
                             <div className="nav-line nav-line-2"></div>
                         </div>
 
                         {/* https://codepen.io/designcouch/pen/Atyop */}
-                        
-                        {/* <div id="nav-hamburguer" onClick={toggle}>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div> */}
 
                         <img className="nav-logo" src={Logo} alt="" />
                         <img className="nav-profile" src={CSharp} alt="" />
@@ -104,5 +106,3 @@ class NavBarUser extends Component {
         );
     }
 }
-
-export default NavBarUser;
