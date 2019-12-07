@@ -18,7 +18,8 @@ import LogOut from '../assets/svg/NavBarUser/logout-icon.svg';
 //Script JS
 import {
     toggleMegaphone,
-    toggleHamburguer
+    toggleHamburguer,
+    toggleAside
 } from '../assets/js/script';
 
 export default class NavBarUser extends Component {
@@ -32,11 +33,12 @@ export default class NavBarUser extends Component {
     }
 
     Megaphone = () => {
-        return toggleMegaphone();
+        toggleMegaphone();
     }
 
     Hamburguer = () => { 
-        return toggleHamburguer();
+        toggleHamburguer();
+        toggleAside();
     }
 
     render() {
@@ -47,10 +49,6 @@ export default class NavBarUser extends Component {
                     <div className="aside-from-above">
                         <div className="aside-logo flex-center">
                             <img className="aside-img-logo" src={Logo} alt="Logo EOL4US(End of Life for Us)" />
-                            <div className="">
-                                <div className=""></div>
-                                <div className=""></div>
-                            </div>
                         </div>
                         <div className="aside-icons">
                             <div className="aside-sup-navigation flex-center">
