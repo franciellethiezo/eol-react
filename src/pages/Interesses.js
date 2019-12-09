@@ -18,7 +18,7 @@ class Interesse extends Component {
         return (
             <div>
                 <div className='pagina-interesse'>
-                    <NavbarAdm />
+                    <NavbarAdm/>
                     <div className='pagina-interesse-conteudo'>
 
                         <div class="titulo-interesse-h2">
