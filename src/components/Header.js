@@ -7,28 +7,26 @@ import '../assets/css/style.css';
 // Imagens (assets/images)
 import Logo from '../assets/img/Logo Oficial.png';
 
-function Header() {
+export default function Header() {
     return (
-        <header className="header-home flex-between">
-            <div className="tw-logo flex-center">
-                <img className="img-logo" src={Logo} alt="logo" />
+        <header className="header flex-between">
+            <div className="header-logo-tw flex-center">
+                <img className="header-img-logo" src={Logo} alt="logo" />
             </div>
-            <nav className="nav-header flex-center">
-                <a className="nav-header-a" href="#">
-                    <button className="btn">Sobre nós</button>
+            <nav className="header-nav flex-center">
+                <a className="header-a-nav" href="#">
+                    <button className="header-register-btn">Sobre nós</button>
                 </a>
-                <a className="nav-header-a" href="#">
-                    <button className="btn">Como funciona?</button>
+                <a className="header-a-nav" href="#">
+                    <button className="header-register-btn">Como funciona?</button>
                 </a>
-                <a className="nav-header-a" href="#">
-                    <button className="btn">Dúvidas</button>
+                <a className="header-a-nav" href="#">
+                    <button className="header-register-btn">Dúvidas</button>
                 </a>
-                <a className="nav-header-a" href="#">
-                    <button className="btn" id="btn-cadastro">Cadastro</button>
+                <a className="header-a-nav" href="#">
+                    <button className="header-register-btn" id="register-btn">Cadastro</button>
                 </a>
             </nav>
         </header>
     );
 }
-
-export default Header;
