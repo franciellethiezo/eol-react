@@ -27,21 +27,21 @@ class CadastroUsuario extends Component {
             <div>
                 <Cabecalho />
 
-                <main className="flex-center">
-                    <section className="box-cad">
-                        <div className="d-box-cad flex-column">
-                            <h2 className="h2-cad">Cadastre-se</h2>
-                            <p className="p-cad">Faça o cadastro no <span><img className="img-logo-cad" src={Logo} alt="logo" /></span></p>
-                            <form action="#" className="form-box-cad flex-column">
-                                <input className="input-cad" type="text" name="nome" placeholder="Nome completo" />
-                                <input className="input-cad" type="text" name="e-mail" placeholder="E-mail corporativo" />
-                                <input className="input-cad" type="text" name="senha" placeholder="Senha" />
-                                <input className="input-cad" type="text" name="confirmação" placeholder="Confirmação de senha" />
-                                <input className="input-cad" type="text" name="telefone" placeholder="Telefone" />
-                                <button className="roxo btn-cad">Cadastre-se</button>
+                <main className="register-user-main flex-center">
+                    <section className="register-card-box">
+                        <div className="register-div-box flex-column">
+                            <h2 className="register-h2">Cadastre-se</h2>
+                            <p className="register-p">Faça o cadastro no <span><img className="register-img-logo img-logo-cad" src={Logo} alt="logo" /></span></p>
+                            <form action="#" className="register-form-box flex-column">
+                                <input className="register-input" type="text" name="nome" placeholder="Nome completo" />
+                                <input className="register-input" type="text" name="e-mail" placeholder="E-mail corporativo" />
+                                <input className="register-input" type="text" name="senha" placeholder="Senha" />
+                                <input className="register-input" type="text" name="confirmação" placeholder="Confirmação de senha" />
+                                <input className="register-input" type="text" name="telefone" placeholder="Telefone" />
+                                <button className="register-color register-btn">Cadastre-se</button>
                             </form>
-                            <p className="p-cad-footer">Já possui uma conta?</p>
-                            <a href="" className="a-cad lnk-entrar">Entrar</a>
+                            <p className="register-p-footer">Já possui uma conta?</p>
+                            <a href="#" className="register-a-login register-link-login">Entrar</a>
                         </div>
                     </section>
                 </main>
