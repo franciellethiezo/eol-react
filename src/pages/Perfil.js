@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import NavBarUser from '../components/NavbarUser';
 
 // Css (assets/css)
-import '../assets/css/perfil.css';
+// import '../assets/css/perfil.css';
 import '../assets/css/style.css';
 
 class Perfil extends Component {
