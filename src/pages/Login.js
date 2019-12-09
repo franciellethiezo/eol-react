@@ -56,7 +56,7 @@ export default class Login extends Component {
                                     <p className="login-p-box">ou</p>
                                     <hr />
                                 </div>
-                                <div className="flex-column">
+                                <div className="login-other flex-column">
                                     <p>Não tem uma conta?</p>
                                     <a className="login-link-register">faça seu cadastro</a>
                                 </div>

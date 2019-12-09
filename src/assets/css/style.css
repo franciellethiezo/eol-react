@@ -1,3 +1,5 @@
+/* #region style.css */
+
 :root {
     --yellow: #FFD34D;
     --green: #94EADB;
@@ -55,3 +57,5 @@ button {
     justify-content: left;
     align-items: center;
 }
+
+/* #endregion */
