@@ -10,6 +10,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 // Importação das Páginas
 import NotFound from './pages/NotFound';
 import ControleUsuario from './pages/ControleUsuario';
+import Interesse from './pages/Interesses';
 
 
 // Import MDB
@@ -23,6 +24,7 @@ const Rotas = (
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route path='/controleusuario' component={ControleUsuario}/>
+                <Route path='/interesses' component={Interesse}/>
                 <Route component={NotFound} />
             </Switch>
         </div>
