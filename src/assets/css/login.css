@@ -177,4 +177,86 @@
     color: #A3A0A0;
 }
 
+@media screen and (max-width: 768px) {
+    .login-card-box {
+        width: 60vw;
+        height: 60vh;
+    }
+
+    .login-div-box {
+        height: 100%;
+    }
+
+    .login-input-form {
+        width: 30vw;
+    }
+
+    .login-btn-card {
+        padding: 0.5em 3.5em;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .login-main {
+        height: calc(100vh - 129px);
+        width: 100vw;
+    }
+
+    .login-card-box {
+        width: 80vw;
+    }
+
+    .login-title-box {
+        font-size: 3em;
+    }
+
+    .login-desc-box {
+        font-size: 1.1em;
+    }
+
+    .login-img-logo {
+        width: 3.5em;
+    }
+    
+    .login-form-box {
+        margin-top: 1em;
+        width: 100%;
+    }
+    
+    .login-input-form {
+        padding: .3em .4em;
+        margin-top: .5em;
+        width: 50vw;
+        font-size: .8em;
+    }
+    
+    .login-remind-box {
+        width: 80vw;
+        margin-top: 1em;
+    }
+    
+    .login-lbl-remember {
+        font-size: 1.2em;
+    }
+    
+    .login-forgotit-password {
+        font-size: .8em;
+    }
+    
+    .login-btn-card {
+        margin-top: 1.5em;
+        padding: 0.5em 3.5em;
+        margin-bottom: .5em;
+    }
+    
+    .login-footer-box {
+        height: 13vh;
+    }
+    
+    .login-other {
+        margin-top: .5em;
+        font-size: .9em;
+    }
+}
+
 /* #endregion */
