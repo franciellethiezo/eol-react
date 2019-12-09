@@ -64,7 +64,7 @@ export default class Login extends Component {
                         </div>
                     </section>
                 </main>
-                {/* <Footer /> */}
+                <Footer />
             </div>
         );
     }

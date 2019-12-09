@@ -1,5 +1,4 @@
 import React from 'react';
-// import { animate } from "../assets/js/script";
 
 // Css (assets/css)
 import '../assets/css/footer.css';
@@ -15,21 +14,19 @@ import LogoTwitter from '../assets/svg/Footer/twitter-logo.svg';
 import LogoLinkedIn from '../assets/svg/Footer/linkedin-logo.svg';
 import LogoGitHub from '../assets/svg/Footer/github-logo.svg';
 
-function Footer() {
+export default function Footer() {
     return (
         <footer className="footer-home flex-between">
-            <img className="logo-tw flex-between" src={LogoThoughtWorks} alt="" />
+            <img className="footer-logo-tw flex-between" src={LogoThoughtWorks} alt="" />
             <div className="footer-links flex-center">
                 <div className="footer-icons flex-around">
-                    <img className="logo-rede-sociais" src={LogoFacebook} />
-                    <img className="logo-rede-sociais" src={LogoInstagram} />
-                    <img className="logo-rede-sociais" src={LogoTwitter} />
-                    <img className="logo-rede-sociais" src={LogoLinkedIn} />
-                    <img className="logo-rede-sociais" src={LogoGitHub} />
+                    <img className="footer-logo-rede-sociais" src={LogoFacebook} />
+                    <img className="footer-logo-rede-sociais" src={LogoInstagram} />
+                    <img className="footer-logo-rede-sociais" src={LogoTwitter} />
+                    <img className="footer-logo-rede-sociais" src={LogoLinkedIn} />
+                    <img className="footer-logo-rede-sociais" src={LogoGitHub} />
                 </div>
             </div>
         </footer>
     );
 }
-
-export default Footer;
