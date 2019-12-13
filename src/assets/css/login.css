@@ -136,6 +136,11 @@
     font-size: 0.9em;
 }
 
+.login-error-p {
+    position: relative;
+    top: 1em;
+}
+
 .login-color-btn {
     background-color: var(--roxo);
 }
@@ -157,7 +162,7 @@
 
 .login-hr {
     flex-direction: row;
-    margin-top: .5em;
+    /* margin-top: .5em; */
 }
 
 .login-p-box {
@@ -167,7 +172,7 @@
 }
 
 .login-other {
-    margin-top: 1em;
+    margin-top: .5em;
 }
 
 .login-link-register {

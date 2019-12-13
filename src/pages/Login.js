@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
+
+// Services
+import { parseJwt } from '../services/Auth';
 
 //Components
 import Header from '../components/Header';
@@ -14,7 +18,46 @@ import Logo from '../assets/img/Logo Oficial.png';
 export default class Login extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            emailUsuario: '',
+            senhaUsuario: '',
+            erroMensagem: '',
+            isLoading: false
+        }
+    }
+
+    EfetuaLogin(event) {
+        event.preventDefault();
+        this.setState({ erroMensagem: '' })
+        this.setState({ isLoading: true });
+
+        Axios.post('https://localhost:5001/api/login', {
+            emailUsuario: this.state.emailUsuario,
+            senhaUsuario: this.state.senhaUsuario
+        })
+            .then(data => {
+                if (data.status === 200) {
+                    localStorage.setItem('usuario-eol', data.data.token)
+                    this.setState({ isLoading: false });
+
+                    console.log(parseJwt().Role)
+                    // window.location.href ="/"
+                    if (parseJwt().Role === 'Administrador') {
+                        this.props.history.push('/perfil');
+                    } else {
+                        this.props.history.push('/');
+                    }
+                }
+            })
+            .catch(erro => {
+                this.setState({ erroMensagem: 'E-mail ou senha inválidos!' })
+                this.setState({ isLoading: false });
+            });
+
+    }
+
+    AtualizaStateCampo(event) {
+        this.setState({ [event.target.name]: event.target.value });
     }
 
     render() {
@@ -28,9 +71,9 @@ export default class Login extends Component {
                             <p className="login-desc-box">
                                 Faça o login no <span><img className="login-img-logo" src={Logo} alt="Logo End of Life for Us" /></span>
                             </p>
-                            <form className="login-form-box flex-column">
-                                <input className="login-input-form" type="text" name="email" placeholder="E-mail" />
-                                <input className="login-input-form" type="text" name="senha" placeholder="Senha" />
+                            <form className="login-form-box flex-column" onSubmit={this.EfetuaLogin.bind(this)}>
+                                <input className="login-input-form" type="text" name="emailUsuario" placeholder="E-mail" value={this.state.emailUsuario} onChange={this.AtualizaStateCampo.bind(this)} />
+                                <input className="login-input-form" type="password" name="senhaUsuario" placeholder="Senha" value={this.state.senhaUsuario} onChange={this.AtualizaStateCampo.bind(this)} />
                                 <div className="login-remind-box flex-column">
                                     <div className="login-remind flex-center">
                                         <input id="input-remind" type="checkbox" name="remind-pass" />
@@ -48,7 +91,10 @@ export default class Login extends Component {
                                     </div>
                                     <a className="login-forgotit-password">Esqueci minha senha</a>
                                 </div>
-                                <button className="login-color-btn login-btn-card">Entrar</button>
+                                <div>
+                                    <p className="login-error-p">{this.state.erroMensagem}</p>
+                                    <button type="submit" className="login-color-btn login-btn-card">Entrar</button>
+                                </div>
                             </form>
                             <div className="login-footer-box">
                                 <div className="login-hr flex-center">

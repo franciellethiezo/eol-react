@@ -15,6 +15,31 @@ import CadastroUsuario from './pages/CadastroUsuario';
 import Perfil from './pages/Perfil';
 import NotFound from './pages/NotFound';
 
+// 
+const PermissaoAdm = ({ component: Component }) => (
+    <Route
+        render={props =>
+            usuarioAutenticado() && parseJwt().Role === 'Administrador' ? (
+                <Component {...props} />
+            ) : (
+                    <Redirect to={{ pathname: 'login' }} />
+                )
+        }
+    />
+);
+
+const PermissaoAluno = ({ component: Component }) => (
+    <Route
+        render={props =>
+            usuarioAutenticado() && parseJwt().Role === 'Funcionário' ? (
+                <Component {...props} />
+            ) : (
+                    <Redirect to={{ pathname: 'login' }} />
+                )
+        }
+    />
+);
+
 // Rotas para páginas
 const Rotas = (
     <Router>
