@@ -1,11 +1,9 @@
 .pagina-controle-usuario {
     display: flex;
 }
-
 .lista-usuario-aprovado {
     width: 100%;
 }
-
 .header-controle-usuario {
     display: flex;
     justify-content: space-around;
@@ -15,7 +13,6 @@
     height:60px;
     padding: 10px 0;
 }
-
 .controle-usuario-cadastrado {
     width: 100%;
 }
@@ -31,7 +28,3 @@
     margin: 0 auto;
 }
 
-.botao-controle-lista{
-    align-content: space-around;
-    /* padding-left: 20px; */
-}

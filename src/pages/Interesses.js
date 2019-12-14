@@ -14,13 +14,27 @@ import IconeCheck from '../assets/img/icone-check.svg';
 import ImagemUsuario from '../assets/img/profile-small.jpg';
 
 class Interesse extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            listausuarios: [],
+            nomeUsuario: '',
+            emailUsuario: '',
+            loading: false,
+        }
+        // this.enviaEmail = this.enviaEmail.bind(this);
+    }
+
+    enviaEmail(){
+        
+    }
+
     render() {
         return (
             <div>
                 <div className='pagina-interesse'>
-                    <NavbarAdm/>
+                    <NavbarAdm />
                     <div className='pagina-interesse-conteudo'>
-
                         <div class="titulo-interesse-h2">
                             <h2>Interessados</h2>
                         </div>
@@ -30,12 +44,14 @@ class Interesse extends Component {
                                     <td class="flex-around interesse-nome-e-email">
                                         <img class="interesse-imagem-perfil"
                                             src={ImagemUsuario} alt="Imagem de um usuario" />
-                                            <td>
-                                                <h3 class="interesse-nome-usuario">João Alves</h3>
-                                            </td>
-                                            <td>
-                                                <h3 class="interesse-email-usuario">joão.alves123@gmail.com</h3>
-                                            </td>
+                                        <td>
+                                            <h3 class="interesse-nome-usuario">João Alves</h3>
+                                        </td>
+                                        <td>
+                                            <h3 class="interesse-email-usuario">joão.alves123@gmail.com</h3>
+                                        </td>
+                                        <tbody id="tabela-lista-corpo">
+                                </tbody>
                                     </td>
                                     <td>
                                         <div class="flex-around">
@@ -58,12 +74,12 @@ class Interesse extends Component {
                                     <td class="flex-around interesse-nome-e-email">
                                         <img class="interesse-imagem-perfil"
                                             src={ImagemUsuario} alt="Imagem de um usuario" />
-                                            <td>
-                                                <h3 class="interesse-nome-usuario">Matheus Pereira</h3>
-                                            </td>
-                                            <td>
-                                                <h3 class="interesse-email-usuario">matheus.123@gmail.com</h3>
-                                            </td>
+                                        <td>
+                                            <h3 class="interesse-nome-usuario">Matheus Pereira</h3>
+                                        </td>
+                                        <td>
+                                            <h3 class="interesse-email-usuario">matheus.123@gmail.com</h3>
+                                        </td>
                                     </td>
                                     <td>
                                         <div class="flex-around">
