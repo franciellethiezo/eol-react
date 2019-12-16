@@ -28,3 +28,10 @@
     margin: 0 auto;
 }
 
+.conteudo-lista-usuario-ativo{
+    display: contents;
+}
+.lista-usuario-botao-ativar{
+    margin-left: 16px !important;
+    margin-top: 10px !important;
+}

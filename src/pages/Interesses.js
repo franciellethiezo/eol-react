@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MDBTable, MDBTableBody, MDBBtn } from 'mdbreact';
+import { MDBTable, MDBTableBody } from 'mdbreact';
 import NavbarAdm from '../components/NavbarAdm';
 
 import '../components/NavbarAdm';
@@ -20,14 +20,19 @@ class Interesse extends Component {
             listausuarios: [],
             nomeUsuario: '',
             emailUsuario: '',
-            loading: false,
         }
-        // this.enviaEmail = this.enviaEmail.bind(this);
+        this.buscarUsuario = this.buscarUsuario.bind(this);
+    }
+    buscarUsuario() {
+        fetch('http://localhost:5000/api/usuario/tolist')
+            .then(resposta => resposta.json())
+            .then(data => this.setState({ listaUsuarios: data }))
+            .catch((erro) => console.log(erro));
+
+
+        console.log(this.state.listaUsuario)
     }
 
-    enviaEmail(){
-        
-    }
 
     render() {
         return (
@@ -40,95 +45,47 @@ class Interesse extends Component {
                         </div>
                         <MDBTable striped>
                             <MDBTableBody>
-                                <tr className='tabela-interesse-usuario'>
-                                    <td class="flex-around interesse-nome-e-email">
-                                        <img class="interesse-imagem-perfil"
-                                            src={ImagemUsuario} alt="Imagem de um usuario" />
-                                        <td>
-                                            <h3 class="interesse-nome-usuario">João Alves</h3>
-                                        </td>
-                                        <td>
-                                            <h3 class="interesse-email-usuario">joão.alves123@gmail.com</h3>
-                                        </td>
-                                        <tbody id="tabela-lista-corpo">
-                                </tbody>
-                                    </td>
-                                    <td>
-                                        <div class="flex-around">
-                                            <div class="icones-lista-interesse-box flex-column">
-                                                <img className='icones-interesse-size' src={IconeData} />
-                                                <h3>01/10/2019</h3>
-                                            </div>
-                                            <div class="icones-lista-interesse-box flex-column">
-                                                <a href='#'> <img className='icones-interesse-size' src={IconeMail} /> </a>
-                                                <h3>Entrar em contato</h3>
-                                            </div>
-                                            <div class="icones-lista-interesse-box flex-column">
-                                                <a href='#'> <img className='icones-interesse-size' src={IconeCheck} /></a>
-                                                <h3>Finalizar</h3>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr className='tabela-interesse-usuario'>
-                                    <td class="flex-around interesse-nome-e-email">
-                                        <img class="interesse-imagem-perfil"
-                                            src={ImagemUsuario} alt="Imagem de um usuario" />
-                                        <td>
-                                            <h3 class="interesse-nome-usuario">Matheus Pereira</h3>
-                                        </td>
-                                        <td>
-                                            <h3 class="interesse-email-usuario">matheus.123@gmail.com</h3>
-                                        </td>
-                                    </td>
-                                    <td>
-                                        <div class="flex-around">
-                                            <div class="icones-lista-interesse-box flex-column">
-                                                <img className='icones-interesse-size' src={IconeData} />
-                                                <h3>02/10/2019</h3>
-                                            </div>
-                                            <div class="icones-lista-interesse-box flex-column">
-                                                <a href='#'> <img className='icones-interesse-size' src={IconeMail} /> </a>
-                                                <h3>Entrar em contato</h3>
-                                            </div>
-                                            <div class="icones-lista-interesse-box flex-column">
-                                                <a href='#'> <img className='icones-interesse-size' src={IconeCheck} /></a>
-                                                <h3>Finalizar</h3>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr className='tabela-interesse-usuario'>
-                                    <td class="flex-around interesse-nome-e-email">
-                                        <img class="interesse-imagem-perfil"
-                                            src={ImagemUsuario} alt="Imagem de um usuario" />
-                                        <td>
-                                            <h3 class="interesse-nome-usuario">Lucas silva</h3>
-                                        </td>
-                                        <td>
-                                            <h3 class="interesse-email-usuario">lucas.silva123@gmail.com</h3>
-                                        </td>
-                                    </td>
-                                    <td>
-                                        <div class="flex-around">
-                                            <div class="icones-lista-interesse-box flex-column">
-                                                <img className='icones-interesse-size' src={IconeData} />
-                                                <h3>03/10/2019</h3>
-                                            </div>
-                                            <div class="icones-lista-interesse-box flex-column">
-                                                <a href='#'> <img className='icones-interesse-size' src={IconeMail} /> </a>
-                                                <h3>Entrar em contato</h3>
-                                            </div>
-                                            <div class="icones-lista-interesse-box flex-column">
-                                                <a href='#'> <img className='icones-interesse-size' src={IconeCheck} /></a>
-                                                <h3>Finalizar</h3>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                {
+                                    this.state.listausuarios.map(usuario => {
+                                        return (
+                                            // <div>
+                                                <tr key={usuario.idUsuario} className='tabela-interesse-usuario'>
+                                                    <td class="flex-around interesse-nome-e-email">
+                                                        <img class="interesse-imagem-perfil"
+                                                            src={ImagemUsuario} alt="Imagem de um usuario" />
+                                                        <td>
+                                                            <h3 class="interesse-nome-usuario">{usuario.nomeUsuario}</h3>
+                                                        </td>
+                                                        <td>
+                                                            <h3 class="interesse-email-usuario">joão.alves123@gmail.com</h3>
+                                                        </td>
+                                                        <tbody id="tabela-lista-corpo">
+                                                        </tbody>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex-around">
+                                                            <div class="icones-lista-interesse-box flex-column">
+                                                                <img className='icones-interesse-size' src={IconeData} />
+                                                                <h3>01/10/2019</h3>
+                                                            </div>
+                                                            <div class="icones-lista-interesse-box flex-column">
+                                                                <a href='#'> <img className='icones-interesse-size' src={IconeMail} /> </a>
+                                                                <h3>Entrar em contato</h3>
+                                                            </div>
+                                                            <div class="icones-lista-interesse-box flex-column">
+                                                                <a href='#'> <img className='icones-interesse-size' src={IconeCheck} /></a>
+                                                                <h3>Finalizar</h3>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                
+                                            // </div>
+                                        )
+                                    })
+                                }
                             </MDBTableBody>
                         </MDBTable>
-
                     </div>
                 </div>
             </div>

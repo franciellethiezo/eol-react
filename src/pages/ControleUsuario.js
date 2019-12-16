@@ -11,7 +11,6 @@ import IconeLixeira from '../assets/img/delete-icone.png'
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
-import Axios from 'axios';
 
 class ControleUsuario extends Component {
     constructor(props) {
@@ -25,10 +24,11 @@ class ControleUsuario extends Component {
             usuarioBuscado: {}
         }
         this.buscarUsuario = this.buscarUsuario.bind(this);
+        this.SetarAtivo = this.SetarAtivo.bind(this)
     }
 
     buscarUsuario() {
-        fetch('http://localhost:5000/api/usuario/tolist/')
+        fetch('http://localhost:5000/api/usuario/tolist')
             .then(resposta => resposta.json())
             .then(data => this.setState({ listaUsuario: data }))
             .catch((erro) => console.log(erro));
@@ -36,72 +36,38 @@ class ControleUsuario extends Component {
 
         console.log(this.state.listaUsuario)
     }
+    async SetarAtivo(id) {
 
-
-
-
-    SetarAtivo = (id) => {
-        this.buscarUsuarioPorId(id);
-        fetch('http://localhost:5000/api/usuario/update' + id, {
+        await this.buscarUsuarioPorId(id);
+        console.log(this.state.usuarioBuscado)
+        fetch('http://localhost:5000/api/usuario/update/' + id, {
             method: 'PUT',
             body: JSON.stringify({
                 idUsuario: this.state.usuarioBuscado.idUsuario,
                 nomeUsuario: this.state.usuarioBuscado.nomeUsuario,
-                telefoneUsuario: this.state.usuarioBuscado.telefoneUsuario,
+                senhaUsuario: this.state.usuarioBuscado.senhaUsuario,
                 emailUsuario: this.state.usuarioBuscado.emailUsuario,
-                statusUsuario: false,
+                statusUsuario: 'true',
+                FkIdTipoUsuario: 2
             }),
             headers: {
-                'content-type': 'application/json'
+                'Content-Type': 'application/json'
             }
         })
             .then(response => response.json())
+            .then(res => this.buscarUsuario(), alert('O usuario '+this.state.usuarioBuscado.emailUsuario+' foi ativado com sucesso'))
             .catch(error => console.log(error))
-
-
-        // usuario.statusUsuario !== usuario.statusUsuario
     }
 
-
-
-    buscarUsuarioPorId(id) {
-        fetch('http://localhost:5000/api/usuario/search/' + id)
+    async buscarUsuarioPorId(id) {
+        await fetch('http://localhost:5000/api/usuario/search/' + id)
             .then(resposta => resposta.json())
             .then(data => this.setState({ usuarioBuscado: data }))
             .catch((erro) => console.log(erro));
     }
 
-
-    // cadastrarUsuario(event) {
-    //     event.preventDefault(); // Evito comportamentos padrão da página
-    //     fetch('http://localhost:5000/api/usuario',
-    //         {
-    //             method: 'POST', // Declara o método que será utilizado
-    //             body: JSON.stringify({ nomeUsuario: this.state.nomeUsuario }),
-    //             headers: {
-    //                 'Content-type': 'application/json'
-    //             }
-    //         })
-    //         .then(resposta => {
-    //             if (resposta.status === 200) {
-    //                 console.log('Categoria Cadastrada!')
-    //             }
-    //         })
-    //         .catch(erro => console.log(erro))
-    //         .then(this.buscarUsuario) // Atualiza na tabela a categoria registrada
-    // }
-    // excluirUsuario(id){
-    //     let id =2;
-    //     fetch('http://localhost:5000/api/usuario/search/' + id,)
-    //     .then(resposta => resposta.json())
-    //     .then(data => this.setState({idUsuario: data.idUsuario}))
-    //     .catch((erro) => console.log(erro));
-    // }
-
-    componentDidMount() {
-        this.buscarUsuario();
-
-        console.log(this.state.listaAtivos)
+    async componentDidMount() {
+        await this.buscarUsuario()
     }
 
     render() {
@@ -131,10 +97,10 @@ class ControleUsuario extends Component {
                                             this.state.listaUsuario.map(usuario => {
                                                 return (
                                                     usuario.statusUsuario == true ? (
-                                                        <div>
+                                                        <div className='conteudo-lista-usuario-ativo'>
                                                             <tr key={usuario.idUsuario}>
                                                                 <td>{usuario.emailUsuario}</td>
-                                                                <td>{usuario.statusUsuario}</td>
+                                                                <td>{usuario.statusUsuario == 0 ? 'Inativo' : 'Ativo'}</td>
                                                                 <td><a href='#'> <img className='icone-excluir-usuario' src={IconeLixeira} /></a></td>
                                                             </tr>
                                                         </div>
@@ -162,13 +128,13 @@ class ControleUsuario extends Component {
                                                 this.state.listaUsuario.map(usuario => {
                                                     return (
                                                         usuario.statusUsuario == false ? (
-                                                            <div>
+                                                            <div className='conteudo-lista-usuario-ativo'>
                                                                 <tr key={usuario.idUsuario}>
                                                                     <td>{usuario.emailUsuario}</td>
                                                                     <td>Inativo</td>
-                                                                    <td><a href='#'> <img className='icone-excluir-usuario' src={IconeLixeira} /></a></td>
+                                                                    {/* <td><a href='#'> <img className='icone-excluir-usuario' src={IconeLixeira} /></a></td> */}
+                                                                <MDBBtn className='lista-usuario-botao-ativar' onClick={() => this.SetarAtivo(usuario.idUsuario)} color="grey" size="sm">Ativar</MDBBtn>
                                                                 </tr>
-                                                                <MDBBtn onClick={this.SetarAtivo(usuario.idUsuario)} color="grey" size="sm">Ativar</MDBBtn>
                                                             </div>
                                                         )
                                                             : (
