@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 // Services
 import { parseJwt } from '../services/Auth';
@@ -22,8 +23,15 @@ export default class Login extends Component {
             emailUsuario: '',
             senhaUsuario: '',
             erroMensagem: '',
-            isLoading: false
+            isLoading: false,
+            isChecked: false
         }
+
+        this.EfetuaLogin = this.EfetuaLogin.bind(this);
+        this.AtualizaStateCampo = this.AtualizaStateCampo.bind(this);
+        this.HandleCheck = this.HandleCheck.bind(this);
+        this.InitData = this.InitData.bind(this);
+        this.SaveData = this.SaveData.bind(this);
     }
 
     EfetuaLogin(event) {
@@ -39,9 +47,11 @@ export default class Login extends Component {
                 if (data.status === 200) {
                     localStorage.setItem('usuario-eol', data.data.token)
                     this.setState({ isLoading: false });
+                    console.log(parseJwt().Role);
 
-                    console.log(parseJwt().Role)
+                    this.SaveData();
                     // window.location.href ="/"
+
                     if (parseJwt().Role === 'Administrador') {
                         this.props.history.push('/perfil');
                     } else {
@@ -60,6 +70,32 @@ export default class Login extends Component {
         this.setState({ [event.target.name]: event.target.value });
     }
 
+    HandleCheck = () => {
+        this.setState({ isChecked: !this.state.isChecked });
+    }
+
+    InitData = () => {
+        const emailUser = localStorage.getItem('user');
+
+        if (emailUser !== ("" || null)) {
+            this.setState({ emailUsuario: emailUser });
+        }
+    }
+
+    SaveData = () => {
+        if (this.state.isChecked) {
+            // alert("true");
+            localStorage.setItem('user', this.state.emailUsuario);
+        } else {
+            // alert("false");
+            localStorage.removeItem('user');
+        }
+    }
+
+    componentDidMount() {
+        this.InitData();
+    }
+
     render() {
         return (
             <div>
@@ -71,13 +107,13 @@ export default class Login extends Component {
                             <p className="login-desc-box">
                                 Faça o login no <span><img className="login-img-logo" src={Logo} alt="Logo End of Life for Us" /></span>
                             </p>
-                            <form className="login-form-box flex-column" onSubmit={this.EfetuaLogin.bind(this)}>
-                                <input className="login-input-form" type="text" name="emailUsuario" placeholder="E-mail" value={this.state.emailUsuario} onChange={this.AtualizaStateCampo.bind(this)} />
-                                <input className="login-input-form" type="password" name="senhaUsuario" placeholder="Senha" value={this.state.senhaUsuario} onChange={this.AtualizaStateCampo.bind(this)} />
+                            <form className="login-form-box flex-column" onSubmit={this.EfetuaLogin}>
+                                <input className="login-input-form" type="text" name="emailUsuario" placeholder="E-mail" value={this.state.emailUsuario} onChange={this.AtualizaStateCampo} />
+                                <input className="login-input-form" type="password" name="senhaUsuario" placeholder="Senha" value={this.state.senhaUsuario} onChange={this.AtualizaStateCampo} />
                                 <div className="login-remind-box flex-column">
                                     <div className="login-remind flex-center">
-                                        <input id="input-remind" type="checkbox" name="remind-pass" />
-                                        <label className="login-cbx" for="input-remind" >
+                                        <input id="input-remind" type="checkbox" name="remind-pass" defaultChecked={this.state.isChecked} onChange={this.HandleCheck} />
+                                        <label className="login-cbx" htmlFor="input-remind" >
                                             <div className="login-flip">
                                                 <div className="login-front"></div>
                                                 <div className="login-back">
@@ -104,7 +140,7 @@ export default class Login extends Component {
                                 </div>
                                 <div className="login-other flex-column">
                                     <p>Não tem uma conta?</p>
-                                    <a className="login-link-register">faça seu cadastro</a>
+                                    <Link className="login-link-register" onClick={() => { this.props.history.push('/cadastro-usuario') }}>faça seu cadastro</Link>
                                 </div>
                             </div>
                         </div>

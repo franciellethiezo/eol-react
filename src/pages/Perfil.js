@@ -17,11 +17,29 @@ export default class Perfil extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            listaUsuario: [],
+            nomeUsuario: '',
+            telefoneUsuario: '',
+            emailUsuario: '',
+            senhaUsuario: ''
         }
 
-        //#region Métodos que a classe utiliza
-        //#endregion
+        this.BuscarUsuario = this.BuscarUsuario.bind(this);
+    }
+
+    BuscarUsuario = () => {
+        fetch('https://localhost:5001/api/usuario/tolist')
+            .then(resposta => { resposta.json() })
+            .then(data => { this.setState({ listaUsuario: data }) })
+            .catch(erro => { console.log(erro) });
+    }
+
+    AtualizarStateCampo = (event) => {
+        this.setState({ [event.target.name]: event.target.value });
+    }
+
+    componentDidMount(){
+        this.BuscarUsuario();
     }
 
     render() {
@@ -45,17 +63,17 @@ export default class Perfil extends Component {
                                 <div className="profile-form-left flex-column">
                                     <div className="profile-form-name">
                                         <label className="profile-labels">Nome</label>
-                                        <input className="profile-inputs" type="text" />
+                                        <input className="profile-inputs" type="text" name="nomeUsuario" />
                                     </div>
                                     <div className="profile-form-telephone">
                                         <label className="profile-labels">Telefone</label>
-                                        <input className="profile-inputs" type="text" />
+                                        <input className="profile-inputs" type="text" name="telefoneUsuario" />
                                     </div>
                                 </div>
                                 <div className="profile-form-right">
                                     <div className="profile-form-email">
                                         <label className="profile-labels">E-mail</label>
-                                        <input className="profile-inputs" type="text" />
+                                        <input className="profile-inputs" type="text" name="emailUsuario" />
                                     </div>
                                     <button className="profile-btns">Salvar Configurações</button>
                                 </div>
@@ -68,11 +86,11 @@ export default class Perfil extends Component {
                                 <div className="profile-down">
                                     <div className="profile-form-new">
                                         <label className="profile-labels">Nova Senha</label>
-                                        <input className="profile-inputs" type="text" />
+                                        <input className="profile-inputs" type="text" name="senhaUsuario" />
                                     </div>
                                     <div className="profile-form-confirm">
                                         <label className="profile-labels">Confirme a Senha</label>
-                                        <input className="profile-inputs" type="text" />
+                                        <input className="profile-inputs" type="text" name="confirmarSenha" />
                                     </div>
                                 </div>
                             </div>
