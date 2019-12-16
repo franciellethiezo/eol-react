@@ -100,7 +100,7 @@ class ControleUsuario extends Component {
                                                         <div className='conteudo-lista-usuario-ativo'>
                                                             <tr key={usuario.idUsuario}>
                                                                 <td>{usuario.emailUsuario}</td>
-                                                                <td>{usuario.statusUsuario == 0 ? 'Inativo' : 'Ativo'}</td>
+                                                                <td>{usuario.statusUsuario === 0 ? 'Inativo' : 'Ativo'}</td>
                                                                 <td><a href='#'> <img className='icone-excluir-usuario' src={IconeLixeira} /></a></td>
                                                             </tr>
                                                         </div>
@@ -127,7 +127,7 @@ class ControleUsuario extends Component {
                                             {
                                                 this.state.listaUsuario.map(usuario => {
                                                     return (
-                                                        usuario.statusUsuario == false ? (
+                                                        usuario.statusUsuario === false ? (
                                                             <div className='conteudo-lista-usuario-ativo'>
                                                                 <tr key={usuario.idUsuario}>
                                                                     <td>{usuario.emailUsuario}</td>

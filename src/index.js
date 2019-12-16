@@ -18,6 +18,7 @@ import ControleUsuario from './pages/ControleUsuario';
 import Interesse from './pages/Interesses';
 import Anuncio from './pages/Anuncio';
 import ListaAnuncio from './pages/ListaAnuncio';
+import Produto from './pages/Produto';
 
 
 // Import MDB
@@ -62,6 +63,7 @@ const Rotas = (
                 <Route path='/interesses' component={Interesse}/>
                 <Route path='/anuncio' component={Anuncio}/>
                 <Route path='/listaanuncio' component={ListaAnuncio}/>
+                <Route path='/produto' component={Produto}/>
                 <Route component={NotFound} />
             </Switch>
         </div>

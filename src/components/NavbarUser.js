@@ -42,7 +42,6 @@ export default class NavBarUser extends Component {
     render() {
         return (
             <div>
-                <div className="dark-modal flex-center" id="dark-modal"></div>
                 <aside id="aside-desktop" className="aside-main">
                     <nav id="hidden" className="aside-nav flex-column-between hidden">
                         <div className="aside-from-above">

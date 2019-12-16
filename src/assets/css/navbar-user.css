@@ -1,6 +1,6 @@
 /* #region navbar-user.css */
 
-.dark-modal {
+/* .dark-modal {
     position: fixed;
     display: none;
     height: 100%;
@@ -8,7 +8,7 @@
     transition: all .4s;
     background-color: rgba(0, 0, 0, 0.356);
     z-index: 1000;
-}
+} */
 
 .aside-main {
     width: 4vw;

@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { MDBRow, MDBCol, MDBCard, MDBCardImage, MDBCardBody, MDBIcon, MDBBadge } from "mdbreact";
 import '../assets/css/anuncio.css';
 import NavbarUser from '../components/NavbarUser';
-import Axios from 'axios';
+import {Link} from 'react-router-dom';
+
 
 import ImagemNoteDell from '../assets/img/dell1.jpg';
-import ImagemNoteApple from '../assets/img/notebook-apple.jpg';
+// import ImagemNoteApple from '../assets/img/notebook-apple.jpeg';
 
 class Anuncio extends Component {
     constructor(props) {
@@ -13,8 +14,8 @@ class Anuncio extends Component {
         this.state = {
             listaAnuncio: [],
             idAnuncio: '',
-            PrecoAnuncio: ''
-            // produto: ''
+            PrecoAnuncio: '',
+            // idImagem: ''
         }
 
         this.buscarAnuncio = this.buscarAnuncio.bind(this);
@@ -30,7 +31,8 @@ class Anuncio extends Component {
 
     componentDidMount() {
         this.buscarAnuncio();
-        // this.imprimeAqui();
+        // this.buscarImagem()
+
     }
 
     // imprimeAqui() {
@@ -41,12 +43,12 @@ class Anuncio extends Component {
         return (
             <div>
                 <div className='anuncio-div-central'>
-                    <NavbarUser />
+                    <NavbarUser/>
                     <section className="text-center my-5">
                         <h2 className="h1-responsive font-weight-bold text-center my-5">Anúncios</h2>
 
                         {
-                            this.state.listaAnuncio.map(function (anuncio) {
+                            this.state.listaAnuncio.map(function(anuncio) {
                                 return (                            
                                     <MDBRow value={anuncio.idAnuncio} className='anuncio-row-caixas' key={anuncio.idAnuncio}>
                                         <MDBCol lg="3" md="6" className="mb-lg-0 mb-4">
@@ -59,18 +61,14 @@ class Anuncio extends Component {
                                                 />
                                                 <MDBCardBody className="text-center">
                                                     <a href="#!" className="grey-text">
-                                                        <h5>Notebook Dell</h5>
+                                                        <h5>{anuncio.fkIdProdutoNavigation.nomeProduto}</h5>
                                                     </a>
-                                                    <h5>
-                                                        <strong>
-                                                            <a href="#!" className="dark-grey-text">
-                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sint perspiciatis{" "}
-                                                            </a>
-                                                        </strong>
-                                                    </h5>
                                                     <h4 className="font-weight-bold blue-text-valor">
-                                                        <strong>{anuncio.PrecoAnuncio}</strong>
+                                                        R${anuncio.precoAnuncio},00
                                                     </h4>
+                                                    <button onClick={() => {window.location.href = '/produto/' + anuncio.idAnuncio}}>
+                                                    Ver Mais
+                                                    </button>
                                                 </MDBCardBody>
                                             </MDBCard>
                                         </MDBCol>
@@ -78,8 +76,6 @@ class Anuncio extends Component {
                                 );
                             }.bind(this))
                         }
-
-
                     </section>
                 </div>
             </div>
@@ -87,3 +83,4 @@ class Anuncio extends Component {
     }
 }
 export default Anuncio;
+
