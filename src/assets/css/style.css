@@ -13,6 +13,12 @@
     margin: 0;
     padding: 0;
     outline: none;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    cursor: pointer;
 }
 
 button {
@@ -512,7 +518,12 @@ aside .thought-logo {
     flex-direction: column;
 }
 
-header {
+.flex-column-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
     height: 72px;
 }
 
@@ -968,6 +979,18 @@ footer .footer-icons {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.flex-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-evenly{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 #payment-check {

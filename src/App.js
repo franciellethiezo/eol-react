@@ -1,11 +1,9 @@
 import React from 'react';
-
+import './App.css';
 import './assets/css/style.css';
 import Cabecalho from './components/Cabecalho';
 import Rodape from './components/Rodape';
 import ImagemBanner from '../src/assets/img/Imagem banner.png';
-
-
 
 function App() {
     return (
@@ -27,7 +25,6 @@ function App() {
                 </section>
             </main>
             <Rodape />
-
         </div>
     );
 }
