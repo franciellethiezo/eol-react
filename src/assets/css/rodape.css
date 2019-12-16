@@ -1,21 +1,21 @@
 /* #region - rodape.css */
 
-.footer-home {
+.rodape-home {
     background-color: #F2C335;
     height: 4em;
     padding: 0 4em;
 }
 
-.footer-home .logo-tw {
+.rodape-home .logo-tw {
     height: 3em;
 }
 
-.footer-home .footer-icons {
+.rodape-home .footer-icons {
     margin-top: 0.5em;
     margin-right: 1em;
 }
 
-.footer-links .footer-icons .logo-rede-sociais {
+.rodape-links .rodape-icons .logo-rede-sociais {
     height: 3.5vh;
     width: 2.5vw;
 }

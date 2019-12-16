@@ -17,15 +17,15 @@ import LogoGitHub from '../assets/svg/Footer/github-logo.svg';
 
 function Rodape() {
     return (
-        <footer className="footer-home flex-between">
+        <footer className="rodape-home flex-between">
             <img className="logo-tw flex-between" src={LogoThoughtWorks} alt="" />
-            <div className="footer-links flex-center">
-                <div className="footer-icons flex-around">
-                    <img className="logo-rede-sociais" src={LogoFacebook} />
-                    <img className="logo-rede-sociais" src={LogoInstagram} />
-                    <img className="logo-rede-sociais" src={LogoTwitter} />
-                    <img className="logo-rede-sociais" src={LogoLinkedIn} />
-                    <img className="logo-rede-sociais" src={LogoGitHub} />
+            <div className="rodape-links flex-center">
+                <div className="rodape-icons flex-around">
+                    <img className="logo-rede-sociais" src={LogoFacebook} alt='icone logo facebook'/>
+                    <img className="logo-rede-sociais" src={LogoInstagram} alt='icone logo instagram'/>
+                    <img className="logo-rede-sociais" src={LogoTwitter} alt='icone logo twitter'/>
+                    <img className="logo-rede-sociais" src={LogoLinkedIn} alt='icone logo linkedin'/>
+                    <img className="logo-rede-sociais" src={LogoGitHub} alt='icone logo github'/>
                 </div>
             </div>
         </footer>

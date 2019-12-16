@@ -15,16 +15,16 @@ function Cabecalho() {
             </div>
             <nav className="nav-header flex-center">
                 <a className="nav-header-a" href="#">
-                    <button className="btn">Sobre nós</button>
+                    <button className="btn-home-cabecalho">Sobre nós</button>
                 </a>
                 <a className="nav-header-a" href="#">
-                    <button className="btn">Como funciona?</button>
+                    <button className="btn-home-cabecalho">Como funciona?</button>
                 </a>
                 <a className="nav-header-a" href="#">
-                    <button className="btn">Dúvidas</button>
+                    <button className="btn-home-cabecalho">Dúvidas</button>
                 </a>
                 <a className="nav-header-a" href="#">
-                    <button className="btn" id="btn-cadastro">Cadastro</button>
+                    <button className="btn-home-cabecalho" id="btn-cadastro-cabecalho">Cadastro</button>
                 </a>
             </nav>
         </header>
