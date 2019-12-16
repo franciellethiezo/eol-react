@@ -30,8 +30,7 @@ export default class CadastroUsuario extends Component {
 
         this.CadastrarUsuario = this.CadastrarUsuario.bind(this);
         this.AtualizarStateCampo = this.AtualizarStateCampo.bind(this);
-        this.BuscarTipoUsuario = this.BuscarTipoUsuario.bind(this);
-        this.BuscarUsuario = this.BuscarUsuario.bind(this);
+        // this.BuscarTipoUsuario = this.BuscarTipoUsuario.bind(this);
     }
 
     CadastrarUsuario = (event) => {
@@ -62,16 +61,15 @@ export default class CadastroUsuario extends Component {
         this.setState({ [event.target.name]: event.target.value });
     }
 
-    BuscarTipoUsuario = () => {
-        fetch('https://localhost:5001/api/tipousuario/tolist')
-            .then(resposta => { resposta.json() })
-            .then(data => { this.setState({ listaTipoUsuario: data }) })
-            .catch(erro => { console.log(erro) });
-    }
+    // BuscarTipoUsuario = () => {
+    //     fetch('https://localhost:5001/api/tipousuario/tolist')
+    //         .then(resposta => { resposta.json() })
+    //         .then(data => { this.setState({ listaTipoUsuario: data }) })
+    //         .catch(erro => { console.log(erro) });
+    // }
 
     componentDidMount() {
-        console.log(this.BuscarTipoUsuario());
-        console.log(this.BuscarUsuario());
+        // this.BuscarTipoUsuario();
     }
 
     render() {

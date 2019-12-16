@@ -29,20 +29,22 @@ export default class Perfil extends Component {
 
     BuscarUsuario = () => {
         fetch('https://localhost:5001/api/usuario/tolist')
-            .then(resposta => { resposta.json() })
-            .then(data => { this.setState({ listaUsuario: data }) })
-            .catch(erro => { console.log(erro) });
+            .then(resposta => resposta.json())
+            .then(data => this.setState({ listaUsuario: data }))
+            .catch(erro => console.log(erro));
     }
 
     AtualizarStateCampo = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.BuscarUsuario();
     }
 
+
     render() {
+        console.log(this.state.listaUsuario);
         return (
             <div>
                 <section id="profile-app-page" className="profile-app-page">
