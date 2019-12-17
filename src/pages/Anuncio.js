@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 
 
 import ImagemNoteDell from '../assets/img/dell1.jpg';
+import Newnavbar from '../components/Newnavbar';
 // import ImagemNoteApple from '../assets/img/notebook-apple.jpeg';
 
 class Anuncio extends Component {
@@ -13,7 +14,7 @@ class Anuncio extends Component {
         super(props);
         this.state = {
             listaAnuncio: [],
-            idAnuncio: '',
+            idAnuncio: '1',
             PrecoAnuncio: '',
             // idImagem: ''
         }
@@ -43,9 +44,8 @@ class Anuncio extends Component {
         return (
             <div>
                 <div className='anuncio-div-central'>
-                    <NavbarUser/>
                     <section className="text-center my-5">
-                        <h2 className="h1-responsive font-weight-bold text-center my-5">Anúncios</h2>
+                        <h2 className="titulo-anuncio">Anúncios</h2>
 
                         {
                             this.state.listaAnuncio.map(function(anuncio) {
@@ -66,7 +66,7 @@ class Anuncio extends Component {
                                                     <h4 className="font-weight-bold blue-text-valor">
                                                         R${anuncio.precoAnuncio},00
                                                     </h4>
-                                                    <button onClick={() => {window.location.href = '/produto/' + anuncio.idAnuncio}}>
+                                                    <button className="botao-anuncio" onClick={() => {window.location.href = '/produto?idAnuncio=' + anuncio.idAnuncio}}>
                                                     Ver Mais
                                                     </button>
                                                 </MDBCardBody>

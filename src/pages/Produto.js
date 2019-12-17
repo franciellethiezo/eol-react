@@ -3,14 +3,16 @@ import NavbarUser from '../components/NavbarUser';
 import "../assets/css/style.css";
 import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 import 'bootstrap-css-only/css/bootstrap.min.css';
-import Anuncio from './Anuncio';
+import { parseJwt } from '../services/Auth';
 
 
 
-// import Dell from "../assets/img/dell1.jpg"
+
+import Dell from "../assets/img/dell1.jpg"
 // import MacFront from "../assets/img/mac-user-inte.jpg";
-// import MacLate from "../assets/img/mac02.jpg";
-// import MacLateE from "../assets/img/mac03.jpg";
+import MacLate from "../assets/img/mac02.jpg";
+import MacLateE from "../assets/img/mac03.jpg";
+import Newnavbar from '../components/Newnavbar';
 
 class Produto extends Component {
     constructor(props) {
@@ -20,7 +22,7 @@ class Produto extends Component {
             nomeProduto: '',
             precoAnuncio: '',
             modeloProduto: '',
-            nomeFabricanteB: '',
+            nomeFabricante: '',
             imagem1: '',
             imagem2: '',
             idProduto: '',
@@ -28,36 +30,23 @@ class Produto extends Component {
             idImagem: '',
             idAnuncio: '',
             idInteresse: '',
-            listaUsuario: []
-
+            listaUsuario: [],
+            idUsuario : parseJwt().idUsuario
         }
-            // this.cadastraInteresse = this.cadastraInteresse.bind(this)
         this.dividirURL = this.dividirURL.bind(this)
-        // this.cadastraIdAnuncio = this.cadastraIdAnuncio.bind(this)  
-    }
-
-    teste(){
-        console.log(this.idAnuncio)
     }
 
     async  componentDidMount() {
         await this.dividirURL()
         await this.buscarProduto()
-        await this.buscarUsuario()
         this.buscarFabricante()
-        this.buscarImagem()
-        this.teste()
-        // this.cadastraIdAnuncio()
-
-        // console.log(this.nomeProduto)
     }
 
     buscarProduto() {
-        let id = 1;
+        let id = this.state.idProduto
         fetch('http://localhost:5000/api/anuncio/search/'+id)
             .then(resposta => resposta.json())
             .then(data => {
-                // console.log(data.fkIdProdutoNavigation.fkIdFabricante)
                 this.setState({
                     nomeProduto: data.fkIdProdutoNavigation.nomeProduto,
                     precoAnuncio: data.precoAnuncio,
@@ -71,15 +60,14 @@ class Produto extends Component {
                 { }
                 this.setState({ loading: false })
             })
-
+            
     }
     buscarFabricante() {
         setTimeout(() => {
-            // let idf = this.state.idFabricante
-            fetch('https://localhost:5001/api/fabricante/search/' + this.state.idFabricante)
+            let idf = this.state.idFabricante
+            fetch('https://localhost:5001/api/fabricante/search/' + idf)
                 .then(resposta => resposta.json())
                 .then(data => {
-                    // console.log(data)
                     this.setState({
                         nomeFabricante: data.nomeFabricante
                     })
@@ -90,114 +78,47 @@ class Produto extends Component {
                 })
         }, 1000);
     }
-    buscarImagem() {
-        setTimeout(() => {
-            let img = this.state.idImagem
-            fetch('https://localhost:5001/api/imagem/search/' + img)
-                .then(resposta => resposta.json())
-                .then(data => {
-                    console.log(data)
-                    this.setState({
-                    })
-                    this.setState({ loading: false });
-                }).catch(error => {
-                    { }
-                    this.setState({ loading: false })
-                })
-        }, 1000);
-    }
+   
     dividirURL() {
         var url = window.location.href
         var id = url.split('=')[1]
         this.setState({ idProduto: id })
     }
 
-    Anuncio = () => {
-        console.log(this.state.idAnuncio
-                    ,this.state.idFabricante
-                    ,this.state.idImagem
-                    ,this.state.idInteresse
-                    ,this.state.idProduto
-                    ,this.state.imagem1
-                    ,this.state.imagem2
-                    ,this.state.listaProduto
-                    ,this.state.modeloProduto
-                    ,this.state.nomeFabricanteB
-                    ,this.state.nomeProduto
-                    ,this.state.precoAnuncio)
-    }
-
-buscarUsuario(){
-    localStorage.getItem('usuario-eol')
-
-}
-
-    
-    // cadastraIdAnuncio() {
-
-
-    //     fetch('https://localhost:5001/api/interesse/insert', {
-    //         method: 'POST',
-    //         body: JSON.stringify({
-    //             dataInteresse: this.state.idInteresse.dataInteresse,
-    //             fkIdUsuario: this.state.idInteresse.idUsuario,
-    //             fkIdAnuncio: this.state.idInteresse.idAnuncio,
-                
-    //         }),
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'content-type': 'application/json',
-    //             // 'authorization': 'Bearer ' + localStorage.getItem('autenticarlogin')
-    //         }
-    //     })
-    //         .then(resposta => {
-    //             if (resposta === 200) {
-    //                 console.log('Cadastro concluído com sucesso')
-    //             }
-    //             else {
-    //                 console.log( this.state.idAnuncio)  
-    //             }
-    //         })
-    //         .catch(error => console.log(error))
-    // }
-    // Aqui é o metodo de post de interesse do usuário 
-
-    // cadastraInteresse(event) {
-    //     event.preventDefault(); //Evito comportamento padões da pg
-
-    //     fetch('https://localhost:5001/api/interesse/tolist',
-    //         {
-    //             method: 'POST',
-    //             body: JSON.stringify({
-    //                 dataInteresse: this.state.dataInteresse,
-
-    //             }),
-    //             headers: {
-    //                 "Content-type": "application/json"
-    //             }
-    //         })
-    //         .then(resposta => {
-    //             if (resposta.status === 200) {
-    //                 console.log('Interesse Cadastrado!');
-    //             }
-    //         })
-    //         .catch(erro => console.log(erro))
-    //         .then(this.buscarInteresse)
-    // }
+    cadastrarInteresse(){
+        let interesse = {
+            idUsuario : parseInt(this.state.idUsuario),
+            idAnuncio : this.state.idAnuncio,
+            aprovado : 'agd'
+        }
+  
+        fetch('http://localhost:5000/api/interesse/insert',{
+            method : 'POST',
+            body : JSON.stringify(interesse) ,           
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }
+          })
+          .then(response => response.json())
+          .then(response => {
+              console.log(response);
+          })
+          .catch(error => console.log('Não foi possível cadastrar:' + error)) 
+      }
 
     render() {
-        console.log(localStorage.getItem('usuario-eol'))
+        
         return (
             <div>
-                {/* <NavbarUser/> */}
+              
                 <body class="web-app">
-                    <NavbarUser/>
+                   
                     <section class="app-page" id="app-page-produto">
-                        
                         <main class="main-produto" id="main-produto">
                             <div class="sup flex-around">
                                 <div class="img-box img-box-produto flex-center flex-column">
-                                    <img src={this.state.imagem1} alt="" />
+                                    <img src={Dell} alt="" />
                                     <div class="thumb-nav flex-between">
                                         <a href="#" /><img src={this.state.imagem2} width="100" alt="" />
                                         {/* <a href="#" /><img src={MacLate} width="100" alt="" />
@@ -206,7 +127,6 @@ buscarUsuario(){
                                 </div>
                                 <div class="infos-box flex-center">
                                     <div class="handle">
-
                                         <h2>{this.state.nomeProduto}</h2>
                                         <h2>R${this.state.precoAnuncio},00</h2>
                                         <div class="filters flex-around filters-produto">

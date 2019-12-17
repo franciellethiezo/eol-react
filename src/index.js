@@ -19,6 +19,8 @@ import Interesse from './pages/Interesses';
 import Anuncio from './pages/Anuncio';
 import ListaAnuncio from './pages/ListaAnuncio';
 import Produto from './pages/Produto';
+import Teste from './pages/test';
+
 
 
 // Import MDB
@@ -64,6 +66,7 @@ const Rotas = (
                 <Route path='/anuncio' component={Anuncio}/>
                 <Route path='/listaanuncio' component={ListaAnuncio}/>
                 <Route path='/produto' component={Produto}/>
+                <Route path='/test' component={Teste}/>
                 <Route component={NotFound} />
             </Switch>
         </div>

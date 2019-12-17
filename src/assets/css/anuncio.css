@@ -5,6 +5,7 @@
 
 .anuncio-div-central{
     display: flex;
+    
     /* align-items: center; */
 }
 .my-5{
@@ -13,6 +14,7 @@ margin-bottom: 1rem !important;
 }
 .anuncio-row-caixas{
     margin: 0;
+    margin-top: 5em;    
 
 }
 .mb-lg-0, .my-lg-0{
@@ -38,4 +40,24 @@ margin-bottom: 1rem !important;
 }
 .anuncio-filtro-centro{
     margin-bottom: 30px;
+}
+.text-center{
+    width: 80vw;
+    display: contents;
+
+}
+
+.botao-anuncio{
+    background-color: #FFD34D;
+    width: 8em;
+    height: 2em;
+    border-radius: 0.3em;
+}
+
+.card{
+    width: 250px;
+    height: 350px;
+}
+.titulo-anuncio{
+    align-items: center;
 }
