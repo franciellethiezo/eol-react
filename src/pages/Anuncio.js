@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { MDBRow, MDBCol, MDBCard, MDBCardImage, MDBCardBody, MDBIcon, MDBBadge } from "mdbreact";
 import '../assets/css/anuncio.css';
-import NavbarUser from '../components/NavbarUser';
+// import NavbarUser from '../components/NavbarUser';
 import {Link} from 'react-router-dom';
 
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavbarUser from '../components/NavbarUser';
+import NewNav from '../components/Newnavbar';
 import "../assets/css/style.css";
 import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 import 'bootstrap-css-only/css/bootstrap.min.css';
@@ -111,9 +111,8 @@ class Produto extends Component {
         
         return (
             <div>
-              
                 <body class="web-app">
-                   
+              <NewNav/>
                     <section class="app-page" id="app-page-produto">
                         <main class="main-produto" id="main-produto">
                             <div class="sup flex-around">
