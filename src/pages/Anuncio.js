@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { MDBRow, MDBCol, MDBCard, MDBCardImage, MDBCardBody, MDBIcon, MDBBadge } from "mdbreact";
+import NewNav from '../components/Newnavbar';
 import '../assets/css/anuncio.css';
 // import NavbarUser from '../components/NavbarUser';
 import {Link} from 'react-router-dom';
@@ -44,6 +45,7 @@ class Anuncio extends Component {
         return (
             <div>
                 <div className='anuncio-div-central'>
+                <NewNav/>
                     <section className="text-center my-5">
                         <h2 className="titulo-anuncio">Anúncios</h2>
 

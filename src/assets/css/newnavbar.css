@@ -7,3 +7,19 @@
 .aside-icons-box{
     
 }
+.div{
+    background-color: yellow;
+}
+
+.teste{
+    background-color: yellow;
+}
+
+.h3, h3{
+    font-size: 1em;    
+}
+
+.aside-icons-box, .aside-img-logout, .aside-img-profile, .aside-img-logoTW{
+    width: 5vw;
+    height: 5vh;
+}
